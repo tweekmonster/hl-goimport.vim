@@ -2,6 +2,7 @@
 
 Highlights imported packages in Go.
 
+![highlight example](https://cloud.githubusercontent.com/assets/111942/16198983/eb6388fc-36d5-11e6-90be-204c32db903f.png)
 
 ## Customization
 
