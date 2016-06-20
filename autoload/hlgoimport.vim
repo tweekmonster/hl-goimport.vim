@@ -33,7 +33,8 @@ function! hlgoimport#update() abort
       if empty(import)
         continue
       endif
-      let alias = matchstr(text, '\s*\zs\k\+')
+
+      let alias = matchstr(substitute(text, '^\s*import\>', '', ''), '^\s*\zs\k\+')
       if !empty(alias)
         call s:uniqadd(imports, alias)
       else
