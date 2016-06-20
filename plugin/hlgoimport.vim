@@ -2,5 +2,6 @@ highlight default link goImportedPkg Include
 
 augroup hl-goimport
   autocmd!
-  autocmd BufEnter,TextChanged,InsertLeave *.go call hlgoimport#update()
+  autocmd BufReadPost,InsertLeave,TextChanged *.go call hlgoimport#update(0)
+  autocmd FileType go call hlgoimport#update(1)
 augroup END

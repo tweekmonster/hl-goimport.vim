@@ -9,7 +9,7 @@ function! s:uniqadd(obj, item) abort
 endfunction
 
 
-function! hlgoimport#update() abort
+function! hlgoimport#update(forced) abort
   let start = 0
   let end = 0
   let view = winsaveview()
@@ -45,7 +45,7 @@ function! hlgoimport#update() abort
     call sort(imports)
   endif
 
-  if !exists('b:goimports') || b:goimports != imports
+  if a:forced || !exists('b:goimports') || b:goimports != imports
     silent! syntax clear goImportedPkg
     let b:goimports = imports
     silent! execute 'syntax keyword goImportedPkg '.join(imports, ' ')
