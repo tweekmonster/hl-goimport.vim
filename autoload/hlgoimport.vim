@@ -14,7 +14,7 @@ function! hlgoimport#update(forced) abort
   let end = 0
   let view = winsaveview()
 
-  keepjumps normal! gg
+  call cursor(1, 1)
   let start = search(s:multi_import, 'cW')
   if start
     let end = search(s:multi_import, 'ceW')
